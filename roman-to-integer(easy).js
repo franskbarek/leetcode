@@ -2,20 +2,27 @@
  * @param {string} s
  * @return {number}
  */
-var romanToInt = function (s) {
-  const roman = new Map([
-    ["I", 1],
-    ["V", 5],
-    ["X", 10],
-    ["L", 50],
-    ["C", 100],
-    ["D", 500],
-    ["M", 1000],
-  ]);
+const romanNums = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000,
+};
+const romanToInt = function (s) {
+  console.log(romanNums);
 
-  console.log(roman.get("I"));
-  console.log(roman.get("M"));
-  console.log(roman.has("V"));
+  value = 0;
+  for (let i = 0; i < s.length; i++) {
+    console.log(i);
+    romanNums[s[i]] < romanNums[s[i + 1]] ? (value -= romanNums[s[i]]) : (value += romanNums[s[i]]);
+  }
+  return value;
 };
 // test case
-console.log(romanToInt("I"));
+console.log(romanToInt("IV"));
+console.log(romanToInt("II"));
+console.log(romanToInt("LVIII"));
+console.log(romanToInt("MCMXCIV"));
