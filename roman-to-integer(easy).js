@@ -17,12 +17,16 @@ const romanToInt = function (s) {
   value = 0;
   for (let i = 0; i < s.length; i++) {
     console.log(i);
+    console.log(romanNums[s[i]]);
+    console.log(romanNums[s[i + 1]]);
+    console.log(value);
+
     romanNums[s[i]] < romanNums[s[i + 1]] ? (value -= romanNums[s[i]]) : (value += romanNums[s[i]]);
   }
   return value;
 };
 // test case
-console.log(romanToInt("IV"));
-console.log(romanToInt("II"));
-console.log(romanToInt("LVIII"));
+// console.log(romanToInt("IV"));
+// console.log(romanToInt("II"));
+// console.log(romanToInt("LVIII"));
 console.log(romanToInt("MCMXCIV"));
