@@ -5,7 +5,7 @@
  */
 
 const searchInsert = (nums, target) => {
-  // #solution2 👍 damn optimize: 0(log n) 85% beats
+  // #solution2 👍 damn optimize: O(log n) 85% beats
   let lo = 0;
   let hi = nums.length - 1;
 
